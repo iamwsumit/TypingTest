@@ -99,12 +99,10 @@ function setText(words) {
 }
 
 function gameOver() {
-  document.querySelector("#text-container").removeEventListener("keyup");
   startTime = 0;
   clearInterval(timer);
-  timer = null;
   getWpm();
-  generateText();
+  document.querySelector("#text-container").removeEventListener("keyup", checkInput);
 }
 
 function checkInput(e) {
